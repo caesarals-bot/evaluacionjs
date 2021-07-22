@@ -41,8 +41,7 @@
                 <h2>Nueva venta</h2>
                 <div class="mb-3">
                   <label for="rut" class="form-label">Rut Cliente</label>
-                  <input type="text" name="rut" class="form-control" id="rut" aria-describedby="emailHelp">
-        
+                  <input type="text" name="rut" class="form-control" id="rut" aria-describedby="emailHelp">        
                 </div>
                 <div class="mb-3">
                   <label for="nombre" class="form-label">Nombre Cliente o Razon social</label>
@@ -50,47 +49,30 @@
                 </div>
                 <div class="mb-3">
                   <label for="fecha" class="form-label">Fecha (DD/MM/YYYY)</label>
-                  <input type="text" name="fecha" class="form-control" id="exampleInputPassword1">
+                  <input type="date" name="fecha" class="form-control" id="fecha">
                 </div>
                 <div class="input-group mb-3">
-                    <label class="input-group-text" for="inputGroupSelect01">Regiones</label>
-                    <select class="form-select" id="inputGroupSelect01">
-                      <option selected>>-Seleccione-<</option>
-                      <option value="Region Arica y Parinacota">Arica y Parinacota </option>
+                    <label class="input-group-text" for="region">Regiones</label>
+                    <select class="form-select" id="region">
+                      <option selected>-Seleccione-</option>
+                      <option value="Arica y Parinacota">Arica y Parinacota </option>
                       <option value="Tarapacá">Tarapacá </option>
-                      <option value="Region Atacama y Coquimbo">
-                          Antofagasta</option>
-                      <option value="Atacama">
-                          Atacama
-                      </option>
-                      <option value="Coquimbo">
-                          Coquimbo
-                      </option>
-                      <option value="O’Higgins">
-                        O’Higgins
-                      </option>
-                      <option value="Maule">
-                          Maule
-                      </option>
-                      <option value="Ñuble">
-                        Ñuble
-                      </option>
-                      <option value="Biobío">
-                        Biobío
-                      </option>
-                      <option value="Los Ríos">
-                        Los Ríos
-                      </option>
-                      <option value="Los Lagos">
-                        Los Lagos
-                      </option>
+                      <option value="Antofagasta">Antofagasta</option>
+                      <option value="Atacama">Atacama</option>
+                      <option value="Coquimbo">Coquimbo</option>
+                      <option value="O’Higgins">O’Higgins</option>
+                      <option value="Maule">Maule</option>
+                      <option value="Ñuble">Ñuble</option>
+                      <option value="Biobío">Biobío</option>
+                      <option value="Los Ríos">Los Ríos</option>
+                      <option value="Los Lagos">Los Lagos</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="precio" class="form-label">Precio Total</label>
                     <input type="number" name="precio" class="form-control" id="precio">
                   </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" id="agregar" class="btn btn-primary">Agregar</button>
               </form>
         </section>
         <section class="col-8 p-5">
@@ -104,38 +86,32 @@
                     <th scope="col">Region</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Nombre</td>
-                    <td>rut</td>
-                    <td>fecha</td>
-                    <td>Region</td>
-                  </tr>
-        
+                <tbody  id="imprime">
+                  <!--Aqui van los valores de la tabla enviados por la funcion js-->       
                 </tbody>
               </table>
               <div class="row">
                 <div class="col-sm-6">
-                  <div class="card bg-primary">
+                  <div class="card bg-primary text-white">
                     <div class="card-body">
-                      <h5 class="card-title text-white">Cantidad de ventas</h5>
+                      <h5 class="card-title">Cantidad de ventas</h5>
                       <p class="card-text text-center">0</p>
         
                     </div>
                   </div>
                 </div>
                 <div class="col-sm-6">
-                  <div class="card bg-success">
+                  <div class="card bg-success text-white">
                     <div class="card-body">
-                      <h5 class="card-title text-white">Total ventas acumulado $</h5>
-                      <p class="card-text text-center">$</p>
-        
+                      <h5 class="card-title">Total ventas acumulado $</h5>
+                      <p class="card-text text-center">$</p>        
                     </div>
                   </div>
                 </div>
               </div>
         </section>
     </div>
+
+    <script src="./asset/js/main.js"></script>
 </body>
 </html>
