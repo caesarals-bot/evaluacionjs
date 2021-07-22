@@ -1,150 +1,38 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Evaluacion Javascript Awakelabs - Manuel Pavez</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dropdown
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <div class="container d-flex justify-content-evenly">
-      <section class="col-4 p-2">
-        <form>
-          <h2>Nueva venta</h2>
-          <div class="mb-3">
-            <label for="rut" class="form-label">Rut Cliente</label>
-            <input
-              type="text"
-              name="rut"
-              class="form-control"
-              id="rut"
-              aria-describedby="emailHelp"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="nombre" class="form-label"
-              >Nombre Cliente o Razon social</label
-            >
-            <input type="text" name="nombre" class="form-control" id="nombre" />
-          </div>
-          <div class="mb-3">
-            <label for="fecha" class="form-label">Fecha (DD/MM/YYYY)</label>
-            <input
-              type="text"
-              name="fecha"
-              class="form-control"
-              id="fecha"
-            />
-          </div>
-          <div class="input-group mb-3">
-            <label class="input-group-text" for="regiones"
-              >Regiones</label
-            >
-            <select class="form-select" id="regiones">
-              <option selected>-Seleccione-</option>
-              <option value="Region Arica y Parinacota">
-                Arica y Parinacota
-              </option>
-              <option value="Tarapacá">Tarapacá</option>
-              <option value="Region Atacama y Coquimbo">Antofagasta</option>
-              <option value="Atacama">Atacama</option>
-              <option value="Coquimbo">Coquimbo</option>
-              <option value="O’Higgins">O’Higgins</option>
-              <option value="Maule">Maule</option>
-              <option value="Ñuble">Ñuble</option>
-              <option value="Biobío">Biobío</option>
-              <option value="Los Ríos">Los Ríos</option>
-              <option value="Los Lagos">Los Lagos</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="precio" class="form-label">Precio Total</label>
-            <input
-              type="number"
-              name="precio"
-              class="form-control"
-              id="precio"
-            />
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </section>
-      <section class="col-8 p-5">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Nombre Cliente</th>
-              <th scope="col">Rut</th>
-              <th scope="col">Fecha</th>
-              <th scope="col">Region</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Nombre</td>
-              <td>rut</td>
-              <td>fecha</td>
-              <td>Region</td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="card bg-primary">
-              <div class="card-body">
-                <h5 class="card-title text-white">Cantidad de ventas</h5>
-                <p class="card-text text-center">0</p>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+        
+                  </li>
+        
+                </ul>
               </div>
             </div>
-<<<<<<< Updated upstream
           </nav>
     </header>
     <div class=" container d-flex justify-content-evenly">
@@ -162,12 +50,12 @@
                 </div>
                 <div class="mb-3">
                   <label for="fecha" class="form-label">Fecha (DD/MM/YYYY)</label>
-                  <input type="text" name="fecha" class="form-control" id="exampleInputPassword1">
+                  <input type="text" name="fecha" class="form-control" id="fecha">
                 </div>
                 <div class="input-group mb-3">
-                    <label class="input-group-text" for="inputGroupSelect01">Regiones</label>
-                    <select class="form-select" id="inputGroupSelect01">
-                      <option selected>-Seleccione-</option>
+                    <label class="input-group-text" for="regiones">Regiones</label>
+                    <select class="form-select" id="regiones">
+                      <option selected>>-Seleccione-<</option>
                       <option value="Region Arica y Parinacota">Arica y Parinacota </option>
                       <option value="Tarapacá">Tarapacá </option>
                       <option value="Region Atacama y Coquimbo">
@@ -246,19 +134,9 @@
                     </div>
                   </div>
                 </div>
-=======
-          </div>
-          <div class="col-sm-6">
-            <div class="card bg-success">
-              <div class="card-body">
-                <h5 class="card-title text-white">Total ventas acumulado $</h5>
-                <p class="card-text text-center">$</p>
->>>>>>> Stashed changes
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
     </div>
-  </body>
+    <script src="./asset/js/main.js"></script>
+</body>
 </html>
