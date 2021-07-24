@@ -1,4 +1,4 @@
-
+const formulario = document.getElementById('formulario');
 const inputRut = document.querySelector("#rut");
 const inputNombre = document.querySelector("#nombre");
 const inputFecha = document.querySelector("#fecha");
@@ -13,7 +13,20 @@ let total = 0;
 //arreglo que llena la lista de ventas
 let listaVentas = [];
 //se agrega evento al boton
-btnAgregar.addEventListener("click", crearVenta);
+btnAgregar.addEventListener("click", (e) => {
+    e.preventDefault();
+
+
+    verificarEnvioFormulario()
+
+    verificandoPrecio(inputPrecio.value)
+
+    verificarEnvioFormulario() && verificandoPrecio(inputPrecio.value) ? crearVenta(): false;
+
+
+    
+
+});
 
 //funcion constructora
 function Venta() {
@@ -39,14 +52,17 @@ function crearVenta() {
     //se llena la lista de productos
     listaVentas.push(venta);
     //se imprime la venta en la tabla
+   
+    
     imprimirVentas();
-    limpiaFormulario();
 
     contarVentas();
+
     imprimirTotalVentas();
 
     imprimirValorTotalVentas();
      
+    limpiaFormulario();
     
 }
 
@@ -59,12 +75,14 @@ function imprimirVentas() {
     let idVenta = 0;
     total = 0;
 
+    
+
     for (let i = 0; i < listaVentas.length; i++) {
         idVenta += 1;
         html += "<tr> <td>" + idVenta + "</td> <td>" + listaVentas[i].rut + "</td> <td>" + listaVentas[i].nombre + "</td> <td>" + listaVentas[i].fecha + "</td> <td>" + listaVentas[i].region + "</td> </tr>";
 
         sumarVentas(listaVentas[i].precio)
-        console.log(total);
+        
     }
 
     //se envian la fila con sus columnas para mostrar en la tabla 
@@ -79,10 +97,45 @@ function imprimirTotalVentas(){
     `
 }
 function imprimirValorTotalVentas(){
+    
     valorTotalVentas.innerHTML=`
         <h5 class="card-title text-white">Cantidad de ventas</h5>
-        <p class="card-text text-center text-white">${total}</p>
+        <p class="card-text text-center text-white">$ ${total}</p>
     `
+}
+
+//funcion verificar el envio del formulario
+
+function verificandoPrecio(precio) {
+    if(isNaN(precio) || precio <= 0 ){
+        console.error('ingrese un numero mayor a 0');
+        return false;
+    }
+    return true;
+}
+    
+    
+    
+
+
+function verificarEnvioFormulario(){
+    
+    if(inputRut.value && inputNombre && inputFecha && inputRegiones && inputPrecio  ){
+        document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+
+        setTimeout(() => {
+            document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+        }, 3000)
+        return true;
+        }else{
+        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+        setTimeout(() => {
+            document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');;
+        }, 3000)
+            return false;
+        
+        }
+            
 }
 
 
@@ -97,7 +150,9 @@ function limpiaFormulario() {
 
 //funcion calcula la cantidad de ventas dentro del arreglo 
 const contarVentas = () => listaVentas.length;
-const sumarVentas = ( num) => total += num;
+
+//funcion que suma el total de ventas
+const sumarVentas = ( num = 0) => total += num;
 
 
 

@@ -1,0 +1,20 @@
+
+.formulario__mensaje {
+   
+    display: none;
+}
+
+.formulario__mensaje-activo {
+    display: block;
+}
+
+
+
+.formulario__mensaje-exito {
+  
+    display: none;
+}
+
+.formulario__mensaje-exito-activo {
+    display: block;
+}
